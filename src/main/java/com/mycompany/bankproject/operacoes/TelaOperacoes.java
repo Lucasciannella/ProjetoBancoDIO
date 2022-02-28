@@ -3,8 +3,7 @@ package com.mycompany.bankproject.operacoes;
 
 import com.mycompany.bankproject.operacoes.Corrente.ContaCorrenteGUI;
 import com.mycompany.bankproject.TelaLogin;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.mycompany.bankproject.operacoes.Corrente.ContaPoupançaGUI;
 
 /**
  *
@@ -51,6 +50,11 @@ public class TelaOperacoes extends javax.swing.JFrame{
 
         jButton2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jButton2.setText("Conta Poupança");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         btnSair.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btnSair.setText("Sair");
@@ -115,6 +119,13 @@ public class TelaOperacoes extends javax.swing.JFrame{
                 dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ContaPoupançaGUI cp = new ContaPoupançaGUI();
+        cp.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -143,10 +154,8 @@ public class TelaOperacoes extends javax.swing.JFrame{
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaOperacoes().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new TelaOperacoes().setVisible(true);
         });
     }
 
